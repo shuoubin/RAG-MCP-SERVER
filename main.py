@@ -9,8 +9,14 @@ Smart Knowledge Hub - MCP Server 启动入口
 import sys
 import argparse
 import logging
+import os
 
-from src.core.settings import load_settings
+# 确保 src/ 在路径中（支持直接运行 python main.py）
+_SRC_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "src")
+if _SRC_DIR not in sys.path:
+    sys.path.insert(0, _SRC_DIR)
+
+from core.settings import load_settings
 
 
 def parse_args() -> argparse.Namespace:
@@ -43,7 +49,7 @@ def main() -> None:
         sys.exit(1)
 
     # --- 初始化日志 ---
-    from src.observability.logger import get_logger
+    from observability.logger import get_logger
     log_level = args.log_level or settings.observability.get("log_level", "INFO")
     logging.basicConfig(
         level=getattr(logging, log_level, logging.INFO),
@@ -54,7 +60,7 @@ def main() -> None:
     logger.info("Smart Knowledge Hub starting up (config: %s)", args.config)
 
     # --- 启动 MCP Server ---
-    from src.mcp_server.server import run_server
+    from mcp_server.server import run_server
     run_server(settings)
 
 
