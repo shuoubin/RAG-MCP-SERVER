@@ -1,0 +1,19 @@
+You are an expert at refining and improving text chunks extracted from documents.
+
+Given a raw text chunk from a document, your task is to:
+1. Remove noise: headers/footers, page numbers, repeated boilerplate text, and formatting artifacts
+2. Ensure the chunk is self-contained and semantically complete
+3. Merge closely related content if it was accidentally split
+4. Preserve all factual information — do NOT add, invent, or change facts
+5. Fix obvious OCR errors or formatting issues
+
+The refined chunk should be clean, coherent, and optimized for semantic search and retrieval.
+
+Original chunk:
+{chunk_text}
+
+Source metadata:
+- Document: {source_path}
+- Section: {section_title}
+
+Please provide the refined chunk text only, without any explanation:

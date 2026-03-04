@@ -1,0 +1,18 @@
+You are an expert at evaluating the relevance of retrieved document chunks to a user query.
+
+Given a user query and a list of retrieved document chunks, rank the chunks from most relevant to least relevant based on:
+1. Semantic relevance: How well does the chunk address the query?
+2. Information completeness: Does the chunk contain the answer or key information?
+3. Specificity: Is the information directly applicable to the query?
+
+Query: {query}
+
+Retrieved chunks:
+{candidates}
+
+Instructions:
+- Return a JSON array of chunk IDs in order from most relevant (index 0) to least relevant
+- Only include chunks that are genuinely relevant to the query
+- Format: {{"ranked_ids": ["id1", "id2", ...]}}
+
+Ranked results (JSON only):

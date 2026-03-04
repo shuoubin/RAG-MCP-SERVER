@@ -1,0 +1,114 @@
+# =====================================================================
+# Smart Knowledge Hub - Main Configuration
+# =====================================================================
+# 修改后重启服务生效
+
+# -----------------------------------------------------------------
+# LLM 配置
+# -----------------------------------------------------------------
+llm:
+  provider: openai                  # 可选: openai | azure | ollama | deepseek
+  model: gpt-4o-mini
+  api_key: ""                       # 或通过环境变量 OPENAI_API_KEY 设置
+  api_base: ""                      # 留空使用默认端点
+  temperature: 0.0
+  max_tokens: 2048
+  timeout: 60
+
+# -----------------------------------------------------------------
+# Vision LLM 配置 (多模态图片描述)
+# -----------------------------------------------------------------
+vision_llm:
+  provider: azure                   # 可选: azure | openai
+  model: gpt-4o
+  api_key: ""
+  api_base: ""
+  api_version: "2024-02-01"
+  timeout: 60
+
+# -----------------------------------------------------------------
+# Embedding 配置
+# -----------------------------------------------------------------
+embedding:
+  provider: openai                  # 可选: openai | azure | ollama
+  model: text-embedding-3-small
+  api_key: ""
+  api_base: ""
+  batch_size: 100
+  dimensions: 1536                  # text-embedding-3-small 默认维度
+
+# -----------------------------------------------------------------
+# Vector Store 配置
+# -----------------------------------------------------------------
+vector_store:
+  provider: chroma                  # 当前支持: chroma
+  persist_dir: data/db/chroma
+  collection_name: default
+  distance_metric: cosine           # cosine | l2 | ip
+
+# -----------------------------------------------------------------
+# Splitter 配置
+# -----------------------------------------------------------------
+splitter:
+  provider: recursive               # 可选: recursive | semantic | fixed_length
+  chunk_size: 512
+  chunk_overlap: 64
+  separators:
+    - "\n## "
+    - "\n### "
+    - "\n#### "
+    - "\n\n"
+    - "\n"
+    - " "
+    - ""
+
+# -----------------------------------------------------------------
+# Retrieval 配置
+# -----------------------------------------------------------------
+retrieval:
+  top_k: 10
+  dense_top_k: 20
+  sparse_top_k: 20
+  rrf_k: 60                         # RRF 公式中的 k 参数
+  filter_threshold: 0.0             # 分数低于此阈值的结果被过滤
+
+# -----------------------------------------------------------------
+# Reranker 配置
+# -----------------------------------------------------------------
+rerank:
+  provider: none                    # 可选: none | cross_encoder | llm
+  model: cross-encoder/ms-marco-MiniLM-L-6-v2
+  top_n: 5                          # rerank 后保留 Top-N
+
+# -----------------------------------------------------------------
+# Ingestion 配置
+# -----------------------------------------------------------------
+ingestion:
+  documents_dir: data/documents
+  images_dir: data/images
+  db_dir: data/db
+  cache_dir: cache
+  enable_chunk_refinement: false    # 是否启用 LLM Chunk 重写 (开销大)
+  enable_metadata_enrichment: false # 是否启用语义元数据注入 (开销大)
+  enable_image_captioning: false    # 是否启用图片描述生成 (需 Vision LLM)
+  batch_size: 32
+
+# -----------------------------------------------------------------
+# Evaluation 配置
+# -----------------------------------------------------------------
+evaluation:
+  provider: custom                  # 可选: custom | ragas
+  golden_test_set: tests/fixtures/golden_test_set.json
+  metrics:
+    - hit_rate
+    - mrr
+
+# -----------------------------------------------------------------
+# Observability 配置
+# -----------------------------------------------------------------
+observability:
+  log_dir: logs
+  trace_file: logs/traces.jsonl
+  app_log_file: logs/app.log
+  log_level: INFO                   # DEBUG | INFO | WARNING | ERROR
+  enable_trace: true

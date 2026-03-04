@@ -33,139 +33,139 @@
 
 ### 📊 进度跟踪表 (Progress Tracking)
 
-> **状态说明**：`[ ]` 未开始 | `[~]` 进行中 | `[X]` 已完成
+> **状态说明**：`[ ]` 未开始 | `[~]` 进行中 | `[x]` 已完成
 > 
 > **更新时间**：每完成一个子任务后更新对应状态
 
 #### 阶段 A：工程骨架与测试基座
 
-| 任务编号 | 任务名称 | 状态 | 完成日期 | 备注 |
-|---------|---------|------|---------|------|
-| A1 | 初始化目录树与最小可运行入口 | [ ] |  |  |
-| A2 | 引入 pytest 并建立测试目录约定 | [ ] |  |  |
-| A3 | 配置加载与校验（Settings） | [ ] |  |  |
+| 任务编号 | 任务名称                       | 状态 | 完成日期 | 备注 |
+| -------- | ------------------------------ | ---- | -------- | ---- |
+| A1       | 初始化目录树与最小可运行入口   | [x]  | 2026-03-04 |      |
+| A2       | 引入 pytest 并建立测试目录约定 | [ ]  |          |      |
+| A3       | 配置加载与校验（Settings）     | [ ]  |          |      |
 
 #### 阶段 B：Libs 可插拔层
 
-| 任务编号 | 任务名称 | 状态 | 完成日期 | 备注 |
-|---------|---------|------|---------|------|
-| B1 | LLM 抽象接口与工厂 | [ ] |  |  |
-| B2 | Embedding 抽象接口与工厂 | [ ] |  |  |
-| B3 | Splitter 抽象接口与工厂 | [ ] |  |  |
-| B4 | VectorStore 抽象接口与工厂 | [ ] |  |  |
-| B5 | Reranker 抽象接口与工厂（含 None 回退） | [ ] |  |  |
-| B6 | Evaluator 抽象接口与工厂 | [ ] |  |  |
-| B7.1 | OpenAI-Compatible LLM 实现 | [ ] |  |  |
-| B7.2 | Ollama LLM 实现 | [ ] |  |  |
-| B7.3 | OpenAI & Azure Embedding 实现 | [ ] |  |  |
-| B7.4 | Ollama Embedding 实现 | [ ] |  |  |
-| B7.5 | Recursive Splitter 默认实现 | [ ] |  |  |
-| B7.6 | ChromaStore 默认实现 | [ ] |  |  |
-| B7.7 | LLM Reranker 实现 | [ ] |  |  |
-| B7.8 | Cross-Encoder Reranker 实现 | [ ] |  |  |
-| B8 | Vision LLM 抽象接口与工厂集成 | [ ] |  |  |
-| B9 | Azure Vision LLM 实现 | [ ] |  |  |
+| 任务编号 | 任务名称                                | 状态 | 完成日期 | 备注 |
+| -------- | --------------------------------------- | ---- | -------- | ---- |
+| B1       | LLM 抽象接口与工厂                      | [ ]  |          |      |
+| B2       | Embedding 抽象接口与工厂                | [ ]  |          |      |
+| B3       | Splitter 抽象接口与工厂                 | [ ]  |          |      |
+| B4       | VectorStore 抽象接口与工厂              | [ ]  |          |      |
+| B5       | Reranker 抽象接口与工厂（含 None 回退） | [ ]  |          |      |
+| B6       | Evaluator 抽象接口与工厂                | [ ]  |          |      |
+| B7.1     | OpenAI-Compatible LLM 实现              | [ ]  |          |      |
+| B7.2     | Ollama LLM 实现                         | [ ]  |          |      |
+| B7.3     | OpenAI & Azure Embedding 实现           | [ ]  |          |      |
+| B7.4     | Ollama Embedding 实现                   | [ ]  |          |      |
+| B7.5     | Recursive Splitter 默认实现             | [ ]  |          |      |
+| B7.6     | ChromaStore 默认实现                    | [ ]  |          |      |
+| B7.7     | LLM Reranker 实现                       | [ ]  |          |      |
+| B7.8     | Cross-Encoder Reranker 实现             | [ ]  |          |      |
+| B8       | Vision LLM 抽象接口与工厂集成           | [ ]  |          |      |
+| B9       | Azure Vision LLM 实现                   | [ ]  |          |      |
 
 #### 阶段 C：Ingestion Pipeline MVP
 
-| 任务编号 | 任务名称 | 状态 | 完成日期 | 备注 |
-|---------|---------|------|---------|------|
-| C1 | 定义核心数据类型/契约（Document/Chunk/ChunkRecord） | [ ] |  |  |
-| C2 | 文件完整性检查（SHA256） | [ ] |  |  |
-| C3 | Loader 抽象基类与 PDF Loader | [ ] |  |  |
-| C4 | Splitter 集成（调用 Libs） | [ ] |  |  |
-| C5 | Transform 基类 + ChunkRefiner | [ ] |  |  |
-| C6 | MetadataEnricher | [ ] |  |  |
-| C7 | ImageCaptioner | [ ] |  |  |
-| C8 | DenseEncoder | [ ] |  |  |
-| C9 | SparseEncoder | [ ] |  |  |
-| C10 | BatchProcessor | [ ] |  |  |
-| C11 | BM25Indexer（倒排索引+IDF计算） | [ ] |  |  |
-| C12 | VectorUpserter（幂等upsert） | [ ] |  |  |
-| C13 | ImageStorage（图片存储+SQLite索引） | [ ] |  |  |
-| C14 | Pipeline 编排（MVP 串起来） | [ ] |  |  |
-| C15 | 脚本入口 ingest.py | [ ] |  |  |
+| 任务编号 | 任务名称                                            | 状态 | 完成日期 | 备注 |
+| -------- | --------------------------------------------------- | ---- | -------- | ---- |
+| C1       | 定义核心数据类型/契约（Document/Chunk/ChunkRecord） | [ ]  |          |      |
+| C2       | 文件完整性检查（SHA256）                            | [ ]  |          |      |
+| C3       | Loader 抽象基类与 PDF Loader                        | [ ]  |          |      |
+| C4       | Splitter 集成（调用 Libs）                          | [ ]  |          |      |
+| C5       | Transform 基类 + ChunkRefiner                       | [ ]  |          |      |
+| C6       | MetadataEnricher                                    | [ ]  |          |      |
+| C7       | ImageCaptioner                                      | [ ]  |          |      |
+| C8       | DenseEncoder                                        | [ ]  |          |      |
+| C9       | SparseEncoder                                       | [ ]  |          |      |
+| C10      | BatchProcessor                                      | [ ]  |          |      |
+| C11      | BM25Indexer（倒排索引+IDF计算）                     | [ ]  |          |      |
+| C12      | VectorUpserter（幂等upsert）                        | [ ]  |          |      |
+| C13      | ImageStorage（图片存储+SQLite索引）                 | [ ]  |          |      |
+| C14      | Pipeline 编排（MVP 串起来）                         | [ ]  |          |      |
+| C15      | 脚本入口 ingest.py                                  | [ ]  |          |      |
 
 #### 阶段 D：Retrieval MVP
 
-| 任务编号 | 任务名称 | 状态 | 完成日期 | 备注 |
-|---------|---------|------|---------|------|
-| D1 | QueryProcessor（关键词提取 + filters） | [ ] |  |  |
-| D2 | DenseRetriever（调用 VectorStore.query） | [ ] |  |  |
-| D3 | SparseRetriever（BM25 查询） | [ ] |  |  |
-| D4 | RRF Fusion | [ ] |  |  |
-| D5 | HybridSearch 编排 | [ ] |  |  |
-| D6 | Reranker（Core 层编排 + Fallback） | [ ] |  |  |
-| D7 | 脚本入口 query.py（查询可用） | [ ] |  |  |
+| 任务编号 | 任务名称                                 | 状态 | 完成日期 | 备注 |
+| -------- | ---------------------------------------- | ---- | -------- | ---- |
+| D1       | QueryProcessor（关键词提取 + filters）   | [ ]  |          |      |
+| D2       | DenseRetriever（调用 VectorStore.query） | [ ]  |          |      |
+| D3       | SparseRetriever（BM25 查询）             | [ ]  |          |      |
+| D4       | RRF Fusion                               | [ ]  |          |      |
+| D5       | HybridSearch 编排                        | [ ]  |          |      |
+| D6       | Reranker（Core 层编排 + Fallback）       | [ ]  |          |      |
+| D7       | 脚本入口 query.py（查询可用）            | [ ]  |          |      |
 
 #### 阶段 E：MCP Server 层与 Tools
 
-| 任务编号 | 任务名称 | 状态 | 完成日期 | 备注 |
-|---------|---------|------|---------|------|
-| E1 | MCP Server 入口与 Stdio 约束 | [ ] |  |  |
-| E2 | Protocol Handler 协议解析与能力协商 | [ ] |  |  |
-| E3 | query_knowledge_hub Tool | [ ] |  |  |
-| E4 | list_collections Tool | [ ] |  |  |
-| E5 | get_document_summary Tool | [ ] |  |  |
-| E6 | 多模态返回组装（Text + Image） | [ ] |  |  |
+| 任务编号 | 任务名称                            | 状态 | 完成日期 | 备注 |
+| -------- | ----------------------------------- | ---- | -------- | ---- |
+| E1       | MCP Server 入口与 Stdio 约束        | [ ]  |          |      |
+| E2       | Protocol Handler 协议解析与能力协商 | [ ]  |          |      |
+| E3       | query_knowledge_hub Tool            | [ ]  |          |      |
+| E4       | list_collections Tool               | [ ]  |          |      |
+| E5       | get_document_summary Tool           | [ ]  |          |      |
+| E6       | 多模态返回组装（Text + Image）      | [ ]  |          |      |
 
 #### 阶段 F：Trace 基础设施与打点
 
-| 任务编号 | 任务名称 | 状态 | 完成日期 | 备注 |
-|---------|---------|------|---------|------|
-| F1 | TraceContext 增强（finish + 耗时统计 + trace_type） | [ ] |  |  |
-| F2 | 结构化日志 logger（JSON Lines） | [ ] |  |  |
-| F3 | 在 Query 链路打点 | [ ] |  |  |
-| F4 | 在 Ingestion 链路打点 | [ ] |  |  |
-| F5 | Pipeline 进度回调 (on_progress) | [ ] |          |  |
+| 任务编号 | 任务名称                                            | 状态 | 完成日期 | 备注 |
+| -------- | --------------------------------------------------- | ---- | -------- | ---- |
+| F1       | TraceContext 增强（finish + 耗时统计 + trace_type） | [ ]  |          |      |
+| F2       | 结构化日志 logger（JSON Lines）                     | [ ]  |          |      |
+| F3       | 在 Query 链路打点                                   | [ ]  |          |      |
+| F4       | 在 Ingestion 链路打点                               | [ ]  |          |      |
+| F5       | Pipeline 进度回调 (on_progress)                     | [ ]  |          |      |
 
 #### 阶段 G：可视化管理平台 Dashboard
 
-| 任务编号 | 任务名称 | 状态 | 完成日期 | 备注 |
-|---------|---------|------|---------|------|
-| G1 | Dashboard 基础架构与系统总览页 | [ ] |  |  |
-| G2 | DocumentManager 实现 | [ ] |  |  |
-| G3 | 数据浏览器页面 | [ ] |  |  |
-| G4 | Ingestion 管理页面 | [ ] |  |  |
-| G5 | Ingestion 追踪页面 | [ ] |  |  |
-| G6 | Query 追踪页面 | [ ] |  |  |
+| 任务编号 | 任务名称                       | 状态 | 完成日期 | 备注 |
+| -------- | ------------------------------ | ---- | -------- | ---- |
+| G1       | Dashboard 基础架构与系统总览页 | [ ]  |          |      |
+| G2       | DocumentManager 实现           | [ ]  |          |      |
+| G3       | 数据浏览器页面                 | [ ]  |          |      |
+| G4       | Ingestion 管理页面             | [ ]  |          |      |
+| G5       | Ingestion 追踪页面             | [ ]  |          |      |
+| G6       | Query 追踪页面                 | [ ]  |          |      |
 
 #### 阶段 H：评估体系
 
-| 任务编号 | 任务名称 | 状态 | 完成日期 | 备注 |
-|---------|---------|------|---------|------|
-| H1 | RagasEvaluator 实现 | [ ] |  |  |
-| H2 | CompositeEvaluator 实现 | [ ] |  |  |
-| H3 | EvalRunner + Golden Test Set | [ ] |  |  |
-| H4 | 评估面板页面 | [ ] |  |  |
-| H5 | Recall 回归测试（E2E） | [ ] |  |  |
+| 任务编号 | 任务名称                     | 状态 | 完成日期 | 备注 |
+| -------- | ---------------------------- | ---- | -------- | ---- |
+| H1       | RagasEvaluator 实现          | [ ]  |          |      |
+| H2       | CompositeEvaluator 实现      | [ ]  |          |      |
+| H3       | EvalRunner + Golden Test Set | [ ]  |          |      |
+| H4       | 评估面板页面                 | [ ]  |          |      |
+| H5       | Recall 回归测试（E2E）       | [ ]  |          |      |
 
 #### 阶段 I：端到端验收与文档收口
 
-| 任务编号 | 任务名称 | 状态 | 完成日期 | 备注 |
-|---------|---------|------|---------|------|
-| I1 | E2E：MCP Client 侧调用模拟 | [ ] |  |  |
-| I2 | E2E：Dashboard 冒烟测试 | [ ] |  |  |
-| I3 | 完善 README（运行说明 + MCP + Dashboard） | [ ] |  |  |
-| I4 | 清理接口一致性（契约测试补齐） | [ ] |  |  |
-| I5 | 全链路 E2E 验收 | [ ] |  |  |
+| 任务编号 | 任务名称                                  | 状态 | 完成日期 | 备注 |
+| -------- | ----------------------------------------- | ---- | -------- | ---- |
+| I1       | E2E：MCP Client 侧调用模拟                | [ ]  |          |      |
+| I2       | E2E：Dashboard 冒烟测试                   | [ ]  |          |      |
+| I3       | 完善 README（运行说明 + MCP + Dashboard） | [ ]  |          |      |
+| I4       | 清理接口一致性（契约测试补齐）            | [ ]  |          |      |
+| I5       | 全链路 E2E 验收                           | [ ]  |          |      |
 
 ---
 
 ### 📈 总体进度
 
-| 阶段 | 总任务数 | 已完成 | 进度 |
-|------|---------|--------|------|
-| 阶段 A | 3 |  |  |
-| 阶段 B | 16 |  |  |
-| 阶段 C | 15 |  |  |
-| 阶段 D | 7 |  |  |
-| 阶段 E | 6 |  |  |
-| 阶段 F | 5 |  |  |
-| 阶段 G | 6 |  |  |
-| 阶段 H | 5 |  |  |
-| 阶段 I | 5 |  |  |
-| **总计** | **68** | **** | **** |
+| 阶段     | 总任务数 | 已完成 | 进度 |
+| -------- | -------- | ------ | ---- |
+| 阶段 A   | 3        | 1      | 33%  |
+| 阶段 B   | 16       |        |      |
+| 阶段 C   | 15       |        |      |
+| 阶段 D   | 7        |        |      |
+| 阶段 E   | 6        |        |      |
+| 阶段 F   | 5        |        |      |
+| 阶段 G   | 6        |        |      |
+| 阶段 H   | 5        |        |      |
+| 阶段 I   | 5        |        |      |
+| **总计** | **68**   | ****   | **** |
 
 
 ---
@@ -1255,4 +1255,5 @@
 - **M4（完成阶段 F）**：Ingestion + Query 双链路可追踪，JSON Lines 持久化。
 - **M5（完成阶段 G）**：六页面可视化管理平台就绪（评估面板为占位），数据可浏览、可管理、链路可追踪。
 - **M6（完成阶段 H+I）**：评估体系完整 + E2E 验收通过 + 文档完善，形成"面试/教学/演示"可复现项目。
+
 
